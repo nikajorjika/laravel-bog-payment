@@ -27,4 +27,9 @@ class Card extends Payment
             'details_url' => $response['_links']['details']['href'],
         ];
     }
+
+    public function delete($parentTransactionId)
+    {
+        return $this->apiClient->delete("/charges/card/$parentTransactionId");
+    }
 }
