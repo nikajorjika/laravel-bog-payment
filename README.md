@@ -201,10 +201,44 @@ redirectUrl($statusUrl): // Sets both success and fail URLs to the same value fo
 
 redirectUrls($failUrl, $successUrl): // Sets separate fail and success URLs for redirection after the payment.
 
+saveCard(): // Sets the save card flag to true for the payment.
+
 amount($totalAmount, $currency = 'GEL', $basket = []): // Defines the total amount, currency, and optionally, the basket details for the payment.
 
 // These methods allow for easy customization of the payment payload to suit various payment requirements.
 ```
+### Set `Buyer`
+
+You can set the buyer details for the payment by using the `setBuyer()` method. This method accepts an array of buyer details, including the buyer's full_name, masked_email, and masked_phone.
+
+here's the example of how you can set the buyer details:
+
+```php
+use Jorjika\BogPayment\Facades\Pay;
+
+$buyer = [
+    'full_name' => 'John Doe',
+    'masked_email' => 'john**@gmail.com',
+    'masked_phone' => '59512****10',
+];
+    
+$paymentDetails = Pay::orderId($transaction->id)
+            ->redirectUrl(route('bog.v1.transaction.status', ['transaction_id' => $transaction->id]))
+            ->amount($data['total_amount'])
+            ->buyer($buyer) // Set new buyer details
+            ->process();
+
+// Optionally you can set buyer details separately
+
+$paymentDetails = Pay::orderId($transaction->id)
+            ->redirectUrl(route('bog.v1.transaction.status', ['transaction_id' => $transaction->id]))
+            ->amount($data['total_amount'])
+            ->buyerName($buyer['full_name']) // Set new buyer full name
+            ->buyerEmail($buyer['masked_email']) // Set new buyer masked email
+            ->buyerPhone($buyer['masked_phone']) // Set new buyer masked phone
+            ->process();
+```
+
 
 ## Callback Handling
 

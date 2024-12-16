@@ -2,6 +2,27 @@
 
 All notable changes to `bog-payment` will be documented in this file.
 
+## v1.0.6 - 2024-12-16
+
+### What's Changed
+
+* Feat/add buyer info by @nikajorjika in https://github.com/nikajorjika/bog-payment/pull/5
+
+**Full Changelog**: https://github.com/nikajorjika/bog-payment/compare/v1.0.5...v1.0.6
+
+## v1.0.5 - 2024-12-07
+
+### What's Changed
+
+* Chore: Refactor test filenames and variable names by @nikajorjika in https://github.com/nikajorjika/bog-payment/pull/3
+* update for Laravel 11 by @jshar in https://github.com/nikajorjika/bog-payment/pull/4
+
+### New Contributors
+
+* @jshar made their first contribution in https://github.com/nikajorjika/bog-payment/pull/4
+
+**Full Changelog**: https://github.com/nikajorjika/bog-payment/compare/v1.0.4...v1.0.5
+
 ## v1.0.4 - 2024-11-26
 
 ### What's Changed
