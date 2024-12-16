@@ -69,12 +69,27 @@ trait BuildsPayment
         return $this;
     }
 
+    public function automatic(): static
+    {
+        $this->payload['capture'] = 'automatic';
+      
+        return $this;
+    }
+  
+    public function manual(): static
+    {
+        $this->payload['capture'] = 'manual';
+      
+        return $this;
+    }
+  
     public function buyer(array $buyer): static
     {
         $this->payload['buyer'] = $buyer;
 
         return $this;
     }
+
 
     public function buyerName(string $fullName): static
     {
@@ -108,7 +123,7 @@ trait BuildsPayment
 
         return $this;
     }
-
+  
     public function amount(float $totalAmount, string $currency = 'GEL', array $basket = []): static
     {
         if (! isset($this->payload['external_order_id']) || empty($this->payload['external_order_id'])) {
