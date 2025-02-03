@@ -1,3 +1,28 @@
+# Deprecated
+
+## ⚠️ Deprecation Warning
+
+This package is **deprecated** and will no longer receive updates, bug fixes, or security patches. 
+
+### 🔄 Recommended Alternatives
+The package has been moved to a new vendor. To continue receiving updates, please switch to the new package.
+- **[RedberryProducts/laravel-bog-payment](https://github.com/RedberryProducts/laravel-bog-payment)** – Maintained and actively supported.
+
+### ❓ What This Means
+- **No new features** will be added.
+- **No bug fixes** or **security patches** will be provided.
+- **No support** for future Laravel versions.
+- The repository may be archived in the near future.
+
+### 🚀 Migration Guide
+1. In composer.json, replace `"nikajorjika/bog-payment": "^1.0"` with `"redberryproducts/laravel-bog-payment": "^1.0"`
+2. Run `composer update`
+3. Replace `Jorjika\BogPayment\Facades\Pay` with `RedberryProducts\LaravelBogPayment\Facades\Pay`
+4. Replace `Jorjika\BogPayment\Facades\Transaction` with `RedberryProducts\LaravelBogPayment\Facades\Transaction`
+5. In your Listener, replace `Nikajorjika\BogPayment\Events\TransactionStatusUpdated` with `RedberryProducts\LaravelBogPayment\Events\TransactionStatusUpdated`
+
+### ❤️ Thank You
+
 # BOG Payment Gateway
 
 The BOG Payment package provides seamless integration with the Bank of Georgia's payment gateway, enabling Laravel applications to process payments efficiently.
